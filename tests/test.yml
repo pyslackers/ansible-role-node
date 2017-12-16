@@ -1,4 +1,4 @@
 ---
 - hosts: localhost
   roles:
-    - ansible-role-node
+    - role: ansible-role-node
