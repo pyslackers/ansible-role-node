@@ -1,0 +1,10 @@
+---
+- name: add apt repository
+  apt_repository:
+    repo: "https://deb.nodesource.com/node_8.x"
+    state: present
+    update_cache: yes
+- name: install node.js
+  apt:
+    name: nodejs
+    state: latest
