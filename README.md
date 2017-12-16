@@ -1,6 +1,8 @@
 # node
 
-Ansible role to install and configure NodeJS.
+[![Build Status](https://travis-ci.org/pyslackers/ansible-role-node.svg?branch=master)](https://travis-ci.org/pyslackers/ansible-role-node)
+
+Ansible role to install NodeJS.
 
 ## Role Variables
 
