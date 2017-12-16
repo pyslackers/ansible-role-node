@@ -25,3 +25,4 @@ script:
   - tail $idempotence | grep -q 'changed=0.*failed=0' && (printf 'Idempotence test pass') || (printf 'Idempotence test fail' && exit 1)
 
   - docker exec --tty ${container_id} node --version | grep "v${node_version}"
+  - docker exec --tty ${container_id} yarn --version
