@@ -1,11 +1,12 @@
 services: docker
 
 env:
-  - distro=debian8
-  - distro=debian9
-  - distro=ubuntu1604
-  - node_version=8
-  - node_version=9
+  - distro=debian8 node_version=8
+  - distro=debian8 node_version=9
+  - distro=debian9 node_version=8
+  - distro=debian9 node_version=9
+  - distro=ubuntu1604 node_version=8
+  - distro=ubuntu1604 node_version=9
 
 install:
   - export container_id=$(date +%s)
