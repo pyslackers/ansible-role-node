@@ -1,9 +1,20 @@
 ---
+- name: add nodesource apt key
+  apt_key:
+    url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+    state: present
+
 - name: add apt repository
   apt_repository:
-    repo: "https://deb.nodesource.com/node_8.x"
+    repo: "deb https://deb.nodesource.com/node_{{ version | default('8') }}.x {{ ansible_distribution_release }} main"
+    state: present
+
+- name: add apt source repository
+  apt_repository:
+    repo: "deb-src https://deb.nodesource.com/node_{{ version | default('8') }}.x {{ ansible_distribution_release }} main"
     state: present
     update_cache: yes
+
 - name: install node.js
   apt:
     name: nodejs
