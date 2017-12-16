@@ -1,0 +1,10 @@
+galaxy_info:
+  author: PySlackers
+  description: Node installer for node 8+ utilizing nodesource PPAs
+  company: PySlackers
+  license: MIT
+  min_ansible_version: 2.1
+  galaxy_tags:
+    - pyslackers
+    - node
+dependencies: []
