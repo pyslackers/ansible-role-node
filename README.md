@@ -14,7 +14,7 @@ Ansible role to install and configure NodeJS.
 - hosts: localhost
   roles:
     - role: pyslackers.node
-      version: '8.9'
+      version: '8'
 ```
 
 ## License

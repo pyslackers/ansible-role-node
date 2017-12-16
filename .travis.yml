@@ -20,8 +20,8 @@ install:
 
 script:
   - docker exec --tty ${container_id} ansible-playbook /etc/ansible/roles/ansible-role-node/tests/test.yml --syntax-check
-  - docker exec ${container_id} env ANSIBLE_FORCE_COLOR=1 ansible-playbook /etc/ansible/roles/ansible-role-node/tests/test.yml -vvv
-  - docker exec ${container_id} ansible-playbook /etc/ansible/roles/ansible-role-node/tests/test.yml | tee -a $idempotence
+  - docker exec ${container_id} env ANSIBLE_FORCE_COLOR=1 ansible-playbook /etc/ansible/roles/ansible-role-node/tests/test.yml --extra-vars="version=${node_version}" -vvv
+  - docker exec ${container_id} ansible-playbook /etc/ansible/roles/ansible-role-node/tests/test.yml --extra-vars="version=${node_version}" | tee -a $idempotence
   - tail $idempotence | grep -q 'changed=0.*failed=0' && (printf 'Idempotence test pass') || (printf 'Idempotence test fail' && exit 1)
 
   - docker exec --tty ${container_id} node --version | grep "v${node_version}"
